@@ -1,0 +1,33 @@
+# Local environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Generated study data
+output/
+notes/
+batches/*
+!batches/example.json
+tests/card_preview*.html
+
+# Local applications and Anki profiles
+Anki/
+anki-temp-base*/
+*.db
+*.db-journal
+
+# Personal source material kept only in the original workspace
+prompt.txt
+anki卡牌模版.txt
+
+# Local configuration and editor files
+.env
+.env.*
+settings.local.json
+.idea/
+.vscode/
+
+# Third-party skill used during development; LanguageLab ships its own skill
+.agents/skills/flashcard-creator/
