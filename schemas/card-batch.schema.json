@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.languagelab/schemas/card-batch.schema.json",
+  "title": "LanguageLab Card Batch v1",
+  "type": "object",
+  "required": ["schema_version", "batch_id", "language", "scenario", "source", "ocr", "cards"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "batch_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$" },
+    "language": { "enum": ["english", "japanese", "mixed"] },
+    "scenario": { "enum": ["reading", "writing", "speaking", "listening", "mixed"] },
+    "source": {
+      "type": "object",
+      "required": ["type", "raw_text", "clean_text"],
+      "properties": {
+        "type": { "enum": ["pasted_text", "screenshot", "mixed"] },
+        "raw_text": { "type": "string", "minLength": 1 },
+        "clean_text": { "type": "string" },
+        "image_paths": { "type": "array", "items": { "type": "string" } },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "ocr": {
+      "type": "object",
+      "required": ["status", "uncertain"],
+      "properties": {
+        "status": { "enum": ["not_applicable", "confirmed", "needs_confirmation"] },
+        "uncertain": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text", "reason"],
+            "properties": {
+              "text": { "type": "string" },
+              "reason": { "type": "string" },
+              "suggestions": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/card" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "card": {
+      "type": "object",
+      "required": ["id", "card_type", "action", "deck", "target", "prompt", "answer", "tags"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "card_type": {
+          "enum": [
+            "english_reading", "english_context_cloze", "japanese_reading",
+            "japanese_grammar_cloze", "writing_expression", "correction_typing",
+            "speaking_cloze", "english_listening", "japanese_listening"
+          ]
+        },
+        "action": { "enum": ["create", "supplement", "update_existing"] },
+        "deck": {
+          "enum": [
+            "LanguageLab::English::Reading", "LanguageLab::English::Writing",
+            "LanguageLab::English::Speaking", "LanguageLab::English::Listening",
+            "LanguageLab::Japanese::N2::Reading", "LanguageLab::Japanese::N2::Grammar",
+            "LanguageLab::Japanese::N2::Listening"
+          ]
+        },
+        "target": { "type": "string" },
+        "prompt": { "type": "string" },
+        "answer": { "type": "string" },
+        "note_format": { "enum": ["word", "phrase", "sentence", "none"] },
+        "part_of_speech": { "type": "string" },
+        "common_meanings": { "type": "array", "items": { "type": "string" } },
+        "phrases": { "type": "array", "items": { "type": "string" } },
+        "usage": { "type": "string" },
+        "example_sentence": { "type": "string" },
+        "example_translation": { "type": "string" },
+        "source_sentence": { "type": "string" },
+        "source_translation": { "type": "string" },
+        "translation_cue": { "type": "string" },
+        "translation_focus": { "type": "string" },
+        "english_frame": { "type": "string" },
+        "model_sentence": { "type": "string" },
+        "accepted_answers": { "type": "array", "items": { "type": "string" } },
+        "speaking_part": { "enum": ["part1", "part2", "part3", "general"] },
+        "speaking_function": { "type": "string" },
+        "grammar_connection": { "type": "string" },
+        "grammar_function": { "type": "string" },
+        "confusable_with": { "type": "array", "items": { "type": "string" } },
+        "listening_focus": { "type": "string" },
+        "miss_reason": { "type": "string" },
+        "sound_features": { "type": "array", "items": { "type": "string" } },
+        "dictation_reason": { "type": "string" },
+        "unknown_words": { "type": "array", "items": { "$ref": "#/$defs/unknownWord" } },
+        "grammar_breakdown": { "type": "array", "items": { "type": "string" } },
+        "meaning": { "type": "string" },
+        "context": { "type": "string" },
+        "reading": { "type": "string" },
+        "extra": { "type": "string" },
+        "explanation": { "type": "string" },
+        "variant": { "type": "string" },
+        "collocations": { "type": "array", "items": { "type": "string" } },
+        "synonyms": { "type": "array", "items": { "type": "string" } },
+        "antonyms": { "type": "array", "items": { "type": "string" } },
+        "word_family": { "type": "array", "items": { "type": "string" } },
+        "expression_group": { "type": "string" },
+        "memory_priority": { "enum": ["core", "related", "optional"] },
+        "source_urls": { "type": "array", "items": { "type": "string", "format": "uri" } },
+        "source_date": { "type": "string", "format": "date" },
+        "tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "tts_text": { "type": "string" },
+        "tts_language": { "enum": ["en_US", "ja_JP"] },
+        "dictation": { "type": "boolean" },
+        "related_note": { "$ref": "#/$defs/relatedNote" },
+        "existing_note": { "$ref": "#/$defs/existingNote" }
+      },
+      "additionalProperties": false
+    },
+    "unknownWord": {
+      "type": "object",
+      "required": ["word", "part_of_speech", "common_meanings", "collocations", "phrases", "example_sentence", "example_translation"],
+      "properties": {
+        "word": { "type": "string", "minLength": 1 },
+        "part_of_speech": { "type": "string" },
+        "common_meanings": { "type": "array", "items": { "type": "string" } },
+        "collocations": { "type": "array", "items": { "type": "string" } },
+        "phrases": { "type": "array", "items": { "type": "string" } },
+        "example_sentence": { "type": "string" },
+        "example_translation": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "relatedNote": {
+      "type": "object",
+      "required": ["guid", "note_type", "deck"],
+      "properties": {
+        "guid": { "type": "string", "minLength": 1 },
+        "note_type": { "type": "string", "minLength": 1 },
+        "deck": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "existingNote": {
+      "type": "object",
+      "required": ["guid", "note_type", "deck", "fields", "additions"],
+      "properties": {
+        "guid": { "type": "string", "minLength": 1 },
+        "note_type": {
+          "const": "英语单词模板(vocab配色)"
+        },
+        "deck": { "type": "string", "minLength": 1 },
+        "fields": { "type": "object", "additionalProperties": { "type": ["string", "number", "null"] } },
+        "additions": { "type": "object", "minProperties": 1 },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

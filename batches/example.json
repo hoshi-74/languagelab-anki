@@ -1,0 +1,322 @@
+{
+    "schema_version":  "1.0",
+    "batch_id":  "demo-ielts-n2-001",
+    "language":  "mixed",
+    "scenario":  "mixed",
+    "source":  {
+                   "type":  "pasted_text",
+                   "raw_text":  "A small mixed demonstration covering IELTS and JLPT N2.",
+                   "clean_text":  "A small mixed demonstration covering IELTS and JLPT N2.",
+                   "image_paths":  [
+
+                                   ],
+                   "description":  "用于验证所有 LanguageLab v1 新卡类型。"
+               },
+    "ocr":  {
+                "status":  "not_applicable",
+                "uncertain":  [
+
+                              ]
+            },
+    "cards":  [
+                  {
+                      "id":  "demo-en-read-rule-out",
+                      "card_type":  "english_reading",
+                      "action":  "create",
+                      "deck":  "LanguageLab::English::Reading",
+                      "target":  "rule out",
+                      "prompt":  "在这句话中，rule out 是什么意思？",
+                      "answer":  "排除（某种可能性）",
+                      "meaning":  "排除",
+                      "context":  "The evidence does not rule out a link between sleep and memory.",
+                      "extra":  "常用于排除解释、疾病或可能性。",
+                      "variant":  "Further tests are needed to rule out other causes.",
+                      "collocations":  [
+                                           "rule out a possibility",
+                                           "rule out other causes"
+                                       ],
+                      "synonyms":  [
+                                       "exclude"
+                                   ],
+                      "antonyms":  [
+                                       "confirm"
+                                   ],
+                      "word_family":  [
+
+                                      ],
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "ielts",
+                                   "reading",
+                                   "phrasal-verb"
+                               ],
+                      "tts_text":  "rule out",
+                      "tts_language":  "en_US",
+                      "dictation":  false,
+                      "note_format":  "phrase",
+                      "usage":  "rule out + possibility/cause，表示根据证据排除某种可能性。",
+                      "example_sentence":  "Further tests are needed to rule out other causes.",
+                      "example_translation":  "需要进一步检查来排除其他原因。",
+                      "source_sentence":  "The evidence does not rule out a link between sleep and memory.",
+                      "source_translation":  "这些证据并未排除睡眠与记忆之间存在联系。"
+                  },
+                  {
+                      "id":  "demo-en-cloze-rule-out",
+                      "card_type":  "english_context_cloze",
+                      "action":  "create",
+                      "deck":  "LanguageLab::English::Reading",
+                      "target":  "rule out",
+                      "prompt":  "Further tests are needed to {{c1::rule out}} other causes.",
+                      "answer":  "排除其他原因",
+                      "meaning":  "排除其他原因",
+                      "context":  "",
+                      "extra":  "产出卡只保留一个核心搭配。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "ielts",
+                                   "reading",
+                                   "productive"
+                               ],
+                      "tts_text":  "Further tests are needed to rule out other causes.",
+                      "tts_language":  "en_US",
+                      "dictation":  false,
+                      "note_format":  "phrase",
+                      "usage":  "rule out + possibility/cause，表示排除某种可能性。",
+                      "example_sentence":  "Further tests are needed to rule out other causes.",
+                      "example_translation":  "需要进一步检查来排除其他原因。",
+                      "translation_cue":  "需要进一步检查来排除其他原因。",
+                      "translation_focus":  "排除其他原因"
+                  },
+                  {
+                      "id":  "demo-ja-read-mitomeru",
+                      "card_type":  "japanese_reading",
+                      "action":  "create",
+                      "deck":  "LanguageLab::Japanese::N2::Reading",
+                      "target":  "認める",
+                      "prompt":  "この文脈で「認める」はどういう意味？",
+                      "answer":  "承认；认可",
+                      "meaning":  "承认；认可",
+                      "context":  "会社は計画を見直す必要があると認めた。",
+                      "reading":  "みとめる",
+                      "extra":  "此处表示承认某种判断，而不是准许进入。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "jlpt",
+                                   "n2",
+                                   "reading"
+                               ],
+                      "tts_text":  "会社は計画を見直す必要があると認めた。",
+                      "tts_language":  "ja_JP",
+                      "dictation":  false,
+                      "note_format":  "word",
+                      "part_of_speech":  "动词",
+                      "common_meanings":  [
+                                              "承认；认可",
+                                              "准许；允许",
+                                              "看见；发现"
+                                          ],
+                      "collocations":  [
+                                           "必要性を認める",
+                                           "事実を認める"
+                                       ],
+                      "phrases":  [
+                                      "認めざるを得ない"
+                                  ],
+                      "example_sentence":  "彼は自分の誤りを認めた。",
+                      "example_translation":  "他承认了自己的错误。",
+                      "source_sentence":  "会社は計画を見直す必要があると認めた。",
+                      "source_translation":  "公司承认有必要重新审视该计划。"
+                  },
+                  {
+                      "id":  "demo-ja-grammar-wake-dewa-nai",
+                      "card_type":  "japanese_grammar_cloze",
+                      "action":  "create",
+                      "deck":  "LanguageLab::Japanese::N2::Grammar",
+                      "target":  "わけではない",
+                      "prompt":  "便利だからといって、問題がない{{c1::わけではない}}。",
+                      "answer":  "并不是说……；并非完全……",
+                      "meaning":  "并不是说方便就没有问题。",
+                      "context":  "",
+                      "extra":  "用于否定由前项轻率推出的结论。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "jlpt",
+                                   "n2",
+                                   "grammar"
+                               ],
+                      "tts_text":  "便利だからといって、問題がないわけではない。",
+                      "tts_language":  "ja_JP",
+                      "dictation":  false,
+                      "note_format":  "phrase",
+                      "usage":  "普通形 + わけではない，用于否定由前项轻率推出的整体结论。",
+                      "grammar_connection":  "普通形 + わけではない；名词和ナ形容词可用 である + わけではない。",
+                      "grammar_function":  "否定由前项轻率推出的整体结论，表示“并不是说……”。",
+                      "confusable_with":  [
+                                                "とは限らない：表示“不一定”，侧重存在例外，不直接否定前项推论。"
+                                            ],
+                      "example_sentence":  "便利だからといって、問題がないわけではない。",
+                      "example_translation":  "并不是说方便就没有问题。"
+                  },
+                  {
+                      "id":  "demo-writing-public-transport",
+                      "card_type":  "writing_expression",
+                      "action":  "create",
+                      "deck":  "LanguageLab::English::Writing",
+                      "target":  "ease traffic congestion",
+                      "prompt":  "改善公共交通可以缓解城市的交通拥堵。",
+                      "answer":  "ease traffic congestion",
+                      "translation_cue":  "改善公共交通可以缓解城市的交通拥堵。",
+                      "translation_focus":  "缓解城市的交通拥堵",
+                      "english_frame":  "Improving public transport can [...] in cities.",
+                      "model_sentence":  "Improving public transport can ease traffic congestion in cities.",
+                      "accepted_answers":  [
+                                                "Better public transport can help alleviate traffic congestion in cities."
+                                            ],
+                      "usage":  "ease traffic congestion 是常见政策类搭配；也可用 alleviate，但语域更正式。",
+                      "meaning":  "",
+                      "context":  "IELTS Writing Task 2：交通政策",
+                      "explanation":  "ease traffic congestion 是比 solve traffic 更准确的搭配。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "ielts",
+                                   "writing",
+                                   "transport"
+                               ],
+                      "tts_text":  "Improving public transport can ease traffic congestion in cities.",
+                      "tts_language":  "en_US",
+                      "dictation":  false
+                  },
+                  {
+                      "id":  "demo-correction-information",
+                      "card_type":  "correction_typing",
+                      "action":  "create",
+                      "deck":  "LanguageLab::English::Writing",
+                      "target":  "information",
+                      "prompt":  "改正：The internet gives us many useful informations.",
+                      "answer":  "The internet gives us a lot of useful information.",
+                      "meaning":  "",
+                      "context":  "注意不可数名词和自然的数量表达。",
+                      "explanation":  "information 是不可数名词，不能使用 informations。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "ielts",
+                                   "writing",
+                                   "correction"
+                               ],
+                      "tts_text":  "The internet gives us a lot of useful information.",
+                      "tts_language":  "en_US",
+                      "dictation":  false
+                  },
+                  {
+                      "id":  "demo-speaking-run-out-of-steam",
+                      "card_type":  "speaking_cloze",
+                      "action":  "create",
+                      "deck":  "LanguageLab::English::Speaking",
+                      "target":  "run out of steam",
+                      "prompt":  "I usually start the week with loads of energy, but I {{c1::run out of steam}} by Friday.",
+                      "answer":  "到周五我通常就没劲了。",
+                      "meaning":  "一开始精力充沛，但到周五就没劲了。",
+                      "translation_cue":  "我通常周初精力充沛，但到周五就没劲了。",
+                      "translation_focus":  "到周五就没劲了",
+                      "model_sentence":  "I usually start the week with loads of energy, but I run out of steam by Friday.",
+                      "accepted_answers":  [
+                                                "I usually start the week full of energy, but I feel worn out by Friday."
+                                            ],
+                      "usage":  "run out of steam 表示逐渐失去精力或动力，适合描述学习、工作或项目进展。",
+                      "speaking_part":  "part1",
+                      "speaking_function":  "描述个人习惯中的转折",
+                      "context":  "",
+                      "extra":  "自然口语块；可替换为 feel worn out，但语气略有不同。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "ielts",
+                                   "speaking",
+                                   "chunk"
+                               ],
+                      "tts_text":  "I usually start the week with loads of energy, but I run out of steam by Friday.",
+                      "tts_language":  "en_US",
+                      "dictation":  false
+                  },
+                  {
+                      "id":  "demo-en-listening-turnout",
+                      "card_type":  "english_listening",
+                      "action":  "create",
+                      "deck":  "LanguageLab::English::Listening",
+                      "target":  "The turnout was lower than expected.",
+                      "prompt":  "精确听写并核对句意。",
+                      "answer":  "The turnout was lower than expected.",
+                      "meaning":  "出席人数比预期少。",
+                      "context":  "turnout 在此表示活动或投票的出席人数。",
+                      "extra":  "",
+                      "listening_focus":  "听出 turnout 和 lower than expected 两个意群。",
+                      "miss_reason":  "turnout 的语境义不熟，同时没有及时切分 lower than expected。",
+                      "sound_features":  [
+                                                "lower than expected 连读时仍按比较结构切分",
+                                                "turnout 的重音落在第一个音节"
+                                            ],
+                      "dictation_reason":  "需要精确掌握 turnout 的拼写和 lower than expected 的词序。",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "ielts",
+                                   "listening"
+                               ],
+                      "tts_text":  "The turnout was lower than expected.",
+                      "tts_language":  "en_US",
+                      "dictation":  true
+                  },
+                  {
+                      "id":  "demo-ja-listening-yoyuu",
+                      "card_type":  "japanese_listening",
+                      "action":  "create",
+                      "deck":  "LanguageLab::Japanese::N2::Listening",
+                      "target":  "時間に余裕を持って出かけたほうがいい。",
+                      "prompt":  "听辨句意并口头复述。",
+                      "answer":  "時間に余裕を持って出かけたほうがいい。",
+                      "meaning":  "最好留出充裕时间再出门。",
+                      "context":  "余裕を持つ：留出余量、从容安排。",
+                      "extra":  "",
+                      "listening_focus":  "把 時間に余裕を持って 作为一个意群听出。",
+                      "miss_reason":  "没有把 余裕を持つ 识别为固定搭配。",
+                      "sound_features":  [
+                                                "按 時間に｜余裕を持って｜出かけたほうがいい 切分意群"
+                                            ],
+                      "dictation_reason":  "",
+                      "source_urls":  [
+
+                                      ],
+                      "source_date":  "2026-08-09",
+                      "tags":  [
+                                   "jlpt",
+                                   "n2",
+                                   "listening"
+                               ],
+                      "tts_text":  "時間に余裕を持って出かけたほうがいい。",
+                      "tts_language":  "ja_JP",
+                      "dictation":  false
+                  }
+              ]
+}

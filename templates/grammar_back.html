@@ -1,0 +1,10 @@
+<div class="ll-card theme-__THEME__">
+  <div class="ll-header">__HEADER__</div>
+  <main class="ll-main">
+    <div class="ll-cloze ll-grammar-model">{{cloze:Text}}</div>
+    {{#TTS}}<div class="ll-audio ll-answer-audio">{{tts __TTS_LANG__:TTS}}</div>{{/TTS}}
+    <div class="ll-answer">{{Meaning}}</div>
+    {{#Extra}}<details open><summary>语气与限制</summary><div class="ll-details">{{Extra}}</div></details>{{/Extra}}
+    {{#Sources}}<details><summary>来源</summary><div class="ll-details ll-sources">{{Sources}}</div></details>{{/Sources}}
+  </main>
+</div>

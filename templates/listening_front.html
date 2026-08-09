@@ -1,0 +1,12 @@
+<div class="ll-card theme-__THEME__">
+  <div class="ll-header">__HEADER__</div>
+  <main class="ll-main ll-listening">
+    <span class="ll-card-seed">{{Target}}</span>
+    {{#Dictation}}<div class="ll-task-label ll-task-center">精确听写</div>{{/Dictation}}
+    {{^Dictation}}<div class="ll-task-label ll-task-center">听辨意思</div>{{/Dictation}}
+    <div class="ll-audio ll-audio-large">{{tts __TTS_LANG__:Target}}</div>
+    {{#Dictation}}<div class="ll-listening-cue">先完整听一遍，再写下原句</div>{{/Dictation}}
+    {{^Dictation}}<div class="ll-listening-cue">先复述大意，再翻面核对</div>{{/Dictation}}
+    {{#Dictation}}<div class="ll-input">{{type:Target}}</div>{{/Dictation}}
+  </main>
+</div>

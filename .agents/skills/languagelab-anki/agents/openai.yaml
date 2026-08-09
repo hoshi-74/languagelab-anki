@@ -1,0 +1,4 @@
+interface:
+  display_name: "LanguageLab Anki"
+  short_description: "Build English and Japanese Anki study packages"
+  default_prompt: "Use $languagelab-anki to turn this language-learning material into a validated Anki package."
